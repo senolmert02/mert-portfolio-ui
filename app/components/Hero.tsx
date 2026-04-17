@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import TypeWriter from "./TypeWriter";
 import Link from "next/link";
 import { useLang } from "../lib/LanguageContext";
@@ -9,14 +9,24 @@ import { useLang } from "../lib/LanguageContext";
 export default function Hero() {
   const { t } = useLang();
   const ref = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 400]);
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 600]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
   return (
     <section ref={ref} className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -24,7 +34,11 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-800/15 rounded-full blur-3xl" />
 
       <motion.div
-        style={{ y, opacity, scale, willChange: "transform, opacity", transform: "translateZ(0)" }}
+        style={
+          isDesktop
+            ? { y, opacity, scale, willChange: "transform, opacity", transform: "translateZ(0)" }
+            : undefined
+        }
         className="flex flex-col items-center relative z-10"
       >
         <motion.p
