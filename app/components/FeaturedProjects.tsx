@@ -17,7 +17,7 @@ export default function FeaturedProjects() {
         <ScrollReveal>
           <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group">
             <div className="h-48 relative overflow-hidden">
-              <Image src="/projects/tys-mobil.png" alt="Kapsül TYS Mobil" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/projects/tys-mobil.png" alt="Kapsül TYS Mobil" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">Kapsül Mobil Uygulama</h3>
@@ -32,7 +32,7 @@ export default function FeaturedProjects() {
         <ScrollReveal>
           <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group">
             <div className="h-48 relative overflow-hidden">
-              <Image src="/projects/kapsul-portal.png" alt="Kapsül Portal" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/projects/kapsul-portal.png" alt="Kapsül Portal" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">Google Workspace Otomasyonları</h3>

@@ -36,8 +36,8 @@ export default function ProjelerPage() {
           <div className="flex flex-col gap-8 mb-16">
             <ScrollReveal>
               <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group flex flex-col md:flex-row">
-                <div className="h-48 md:h-auto md:w-64 relative overflow-hidden">
-                  <Image src="/projects/tys-mobil.png" alt="Kapsül TYS Mobil" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-48 md:h-56 md:w-64 md:flex-shrink-0 md:self-center relative overflow-hidden">
+                  <Image src="/projects/tys-mobil.png" alt="Kapsül TYS Mobil" fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex-1">
                   <h3 className="text-2xl font-bold mb-2">{t.projectsPage.tysMobile.title}</h3>
@@ -55,8 +55,8 @@ export default function ProjelerPage() {
 
             <ScrollReveal>
               <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group flex flex-col md:flex-row">
-                <div className="h-48 md:h-auto md:w-64 relative overflow-hidden">
-                  <Image src="/projects/tys-web.png" alt="Kapsül TYS Web" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-48 md:h-56 md:w-64 md:flex-shrink-0 md:self-center relative overflow-hidden">
+                  <Image src="/projects/tys-web.png" alt="Kapsül TYS Web" fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex-1">
                   <h3 className="text-2xl font-bold mb-2">{t.projectsPage.tysWeb.title}</h3>
@@ -74,7 +74,7 @@ export default function ProjelerPage() {
 
             <ScrollReveal>
               <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group flex flex-col md:flex-row">
-                <div className="h-48 md:h-auto md:w-64 bg-gradient-to-br from-yellow-900/50 to-yellow-600/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                <div className="h-48 md:h-56 md:w-64 md:flex-shrink-0 md:self-center bg-gradient-to-br from-yellow-900/50 to-yellow-600/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                   <span className="text-5xl">⚡</span>
                 </div>
                 <div className="p-6 flex-1">
@@ -99,8 +99,8 @@ export default function ProjelerPage() {
           <div className="flex flex-col gap-8 mb-16">
             <ScrollReveal>
               <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group flex flex-col md:flex-row">
-                <div className="h-48 md:h-auto md:w-64 relative overflow-hidden">
-                  <Image src="/projects/kiosk.png" alt="Kiosk Sistemi" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-48 md:h-56 md:w-64 md:flex-shrink-0 md:self-center relative overflow-hidden">
+                  <Image src="/projects/kiosk.png" alt="Kiosk Sistemi" fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex-1">
                   <h3 className="text-2xl font-bold mb-2">{t.projectsPage.kioskSystem.title}</h3>
@@ -122,8 +122,8 @@ export default function ProjelerPage() {
           <div className="flex flex-col gap-8 mb-16">
             <ScrollReveal>
               <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group flex flex-col md:flex-row">
-                <div className="h-48 md:h-auto md:w-64 relative overflow-hidden">
-                  <Image src="/projects/kapsul-portal.png" alt="Kapsül Portal" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="h-48 md:h-56 md:w-64 md:flex-shrink-0 md:self-center relative overflow-hidden">
+                  <Image src="/projects/kapsul-portal.png" alt="Kapsül Portal" fill sizes="(max-width: 768px) 100vw, 256px" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex-1">
                   <h3 className="text-2xl font-bold mb-2">{t.projectsPage.portalProject.title}</h3>
@@ -166,7 +166,7 @@ export default function ProjelerPage() {
           <div className="flex flex-col gap-8">
             <ScrollReveal>
               <div className="border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition group flex flex-col md:flex-row">
-                <div className="h-48 md:h-auto md:w-64 bg-gradient-to-br from-purple-900/50 to-purple-600/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                <div className="h-48 md:h-56 md:w-64 md:flex-shrink-0 md:self-center bg-gradient-to-br from-purple-900/50 to-purple-600/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                   <span className="text-5xl">▲</span>
                 </div>
                 <div className="p-6 flex-1">

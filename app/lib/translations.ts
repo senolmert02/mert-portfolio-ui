@@ -3,14 +3,14 @@ export const translations = {
     hero: {
       greeting: "Merhaba, ben",
       title: "Bilgisayar Mühendisi",
-      description: "Mobil uygulama, web geliştirme ve otomasyon çözümleri ile dijital deneyimler oluşturuyorum.",
+      description: "Full-stack geliştirici olarak uçtan uca yazılım çözümleri üretiyorum.",
       projects: "Projelerimi Gör",
       contact: "İletişim",
       scroll: "KAYDIR ↓",
     },
     about: {
       title: "Hakkımda",
-      description: "Konya Gıda ve Tarım Üniversitesi Bilgisayar Mühendisliği mezunuyum. Kapsül Teknoloji'de yazılım geliştirici olarak çalışıyorum. React Native ile mobil uygulama geliştirme, Google Apps Script ile otomasyon projeleri ve Node.js ile backend geliştirme deneyimim var. Sürekli öğrenmeye ve kendimi geliştirmeye tutkuyla bağlıyım.",
+      description: "Konya Gıda ve Tarım Üniversitesi Bilgisayar Mühendisliği mezunuyum. Henüz öğrenciyken Kapsül Teknoloji Platformu'nda çalışmaya başladım ve bu süreçte mobil uygulamada hem frontend hem de backend tarafında yeterli deneyim kazandım. Geliştirdiğim projelerin yayına alma süreçlerine hâkim olarak uçtan uca yazılım üretimi konusunda kendimi yetkinleştirdim.",
       projects: "Proje",
       technologies: "Teknoloji",
       experience: "Yıl Deneyim",
@@ -47,7 +47,7 @@ export const translations = {
     },
     contact: {
       title: "İletişim",
-      description: "Bir projeniz mi var? Birlikte çalışmak ister misiniz? Bana ulaşın!",
+      description: "",
     },
     projectsPage: {
       back: "← Ana Sayfa",
@@ -91,14 +91,14 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       title: "Computer Engineer",
-      description: "Creating digital experiences with mobile apps, web development, and automation solutions.",
+      description: "Full-stack developer crafting end-to-end software solutions.",
       projects: "View Projects",
       contact: "Contact",
       scroll: "SCROLL ↓",
     },
     about: {
       title: "About Me",
-      description: "I'm a Computer Engineering graduate from Konya Food and Agriculture University. I work as a software developer at Kapsül Technology. I have experience in mobile app development with React Native, automation projects with Google Apps Script, and backend development with Node.js. I'm passionately committed to continuous learning and self-improvement.",
+      description: "I'm a Computer Engineering graduate from Konya Food and Agriculture University. I started working at Kapsül Technology Platform while still a student, and during this time I gained solid experience in both frontend and backend development of mobile applications. I've also become proficient in deployment processes, building end-to-end software from start to finish.",
       projects: "Projects",
       technologies: "Technologies",
       experience: "Year Experience",
@@ -135,7 +135,7 @@ export const translations = {
     },
     contact: {
       title: "Contact",
-      description: "Have a project? Want to work together? Reach out!",
+      description: "",
     },
     projectsPage: {
       back: "← Home",

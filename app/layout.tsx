@@ -14,10 +14,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mert-portfolio-ui.vercel.app"),
   title: "Şenol Mert Şar",
   description: "Şenol Mert Şar tarafından geliştirilen kişisel portföy sitesi.",
   icons: {
-    icon: "/logo.svg",
+    icon: "/senol-mert-sar.svg",
+    apple: "/senol-mert-sar.svg",
+  },
+  openGraph: {
+    title: "Şenol Mert Şar",
+    description: "Şenol Mert Şar tarafından geliştirilen kişisel portföy sitesi.",
+    url: "https://mert-portfolio-ui.vercel.app",
+    siteName: "Şenol Mert Şar",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Şenol Mert Şar - Portföy",
+      },
+    ],
+    locale: "tr_TR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Şenol Mert Şar",
+    description: "Şenol Mert Şar tarafından geliştirilen kişisel portföy sitesi.",
+    images: ["/og-image.png"],
   },
 };
 

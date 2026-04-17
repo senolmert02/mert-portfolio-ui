@@ -21,15 +21,7 @@ export default function Contact() {
       >
         {t.contact.title}
       </motion.h2>
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="text-gray-400 mb-16 text-center max-w-md"
-      >
-        {t.contact.description}
-      </motion.p>
+      <div className="mb-16" />
 
       <div className="flex flex-col items-center gap-8">
         <motion.div

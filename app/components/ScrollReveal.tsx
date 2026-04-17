@@ -1,23 +1,15 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function ScrollReveal({ children }: { children: React.ReactNode }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [100, 0, 0, -100]);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
-
   return (
     <motion.div
-      ref={ref}
-      style={{ opacity, y, scale }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10% 0px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      style={{ position: "relative", willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>

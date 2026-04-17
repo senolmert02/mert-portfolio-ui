@@ -14,7 +14,7 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 400]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-800/15 rounded-full blur-3xl" />
 
       <motion.div
-        style={{ y, opacity, scale }}
+        style={{ y, opacity, scale, willChange: "transform, opacity", transform: "translateZ(0)" }}
         className="flex flex-col items-center relative z-10"
       >
         <motion.p
