@@ -15,15 +15,15 @@ export default function Home() {
       <SocialBar />
       <LangToggle />
       <Hero />
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
       <About />
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
       <Experience />
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
       <Skills />
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
       <FeaturedProjects />
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
       <Contact />
     </div>
   );

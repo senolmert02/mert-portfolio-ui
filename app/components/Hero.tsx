@@ -106,7 +106,7 @@ export default function Hero() {
         transition={{ duration: 2, delay: 2, repeat: Infinity }}
         className="absolute bottom-10 z-10"
       >
-        <span className="text-gray-600 text-sm tracking-widest">{t.hero.scroll}</span>
+        <span className="text-gray-600 text-2xl">↓</span>
       </motion.div>
     </section>
   );
