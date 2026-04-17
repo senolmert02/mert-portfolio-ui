@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section ref={ref} className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 via-black to-black" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-800/15 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-800/15 rounded-full blur-3xl hidden md:block" />
 
       <motion.div
         style={
