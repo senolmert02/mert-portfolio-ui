@@ -27,3 +27,25 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.parallax-scroll {
+  animation: parallaxScroll linear both;
+  animation-timeline: view();
+  animation-range: cover 0% cover 100%;
+  will-change: transform, opacity;
+}
+
+@keyframes parallaxScroll {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 150px, 0) scale(0.7);
+  }
+  35%, 65% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -150px, 0) scale(0.7);
+  }
+}

@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import SocialBar from "./components/SocialBar";
 import MouseGlow from "./components/MouseGlow";
 import LangToggle from "./components/LangToggle";
+import ParallaxSection from "./components/ParallaxSection";
 
 export default function Home() {
   return (
@@ -16,15 +17,25 @@ export default function Home() {
       <LangToggle />
       <Hero />
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
-      <About />
+      <ParallaxSection>
+        <About />
+      </ParallaxSection>
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
-      <Experience />
+      <ParallaxSection>
+        <Experience />
+      </ParallaxSection>
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
-      <Skills />
+      <ParallaxSection>
+        <Skills />
+      </ParallaxSection>
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
-      <FeaturedProjects />
+      <ParallaxSection>
+        <FeaturedProjects />
+      </ParallaxSection>
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
-      <Contact />
+      <ParallaxSection>
+        <Contact />
+      </ParallaxSection>
     </div>
   );
 }
