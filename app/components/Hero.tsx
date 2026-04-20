@@ -1,15 +1,22 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import TypeWriter from "./TypeWriter";
+import SandText from "./SandText";
+import HandCursor from "./HandCursor";
+import DrawingCanvas from "./DrawingCanvas";
+import HandInfoToast from "./HandInfoToast";
 import Link from "next/link";
 import { useLang } from "../lib/LanguageContext";
+import { useHandTracker } from "../lib/useHandTracker";
+import { useGesture } from "../lib/useGesture";
 
 export default function Hero() {
   const { t } = useLang();
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [inView, setInView] = useState(true);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -18,6 +25,27 @@ export default function Hero() {
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.1 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const { enabled: handEnabled, pointsRef, handsRef } = useHandTracker(
+    isDesktop && inView,
+  );
+
+  const onSwipeUp = useCallback(() => {
+    window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+  }, []);
+
+  const gestureRef = useGesture(handsRef, handEnabled && inView, onSwipeUp);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -49,14 +77,30 @@ export default function Hero() {
         >
           {t.hero.greeting}
         </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent text-center"
-        >
-          Şenol Mert Şar
-        </motion.h1>
+        {handEnabled ? (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mb-6"
+          >
+            <SandText
+              text="Şenol Mert Şar"
+              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent"
+              pointsRef={pointsRef}
+              active={handEnabled}
+            />
+          </motion.div>
+        ) : (
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent text-center"
+          >
+            Şenol Mert Şar
+          </motion.h1>
+        )}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -108,6 +152,14 @@ export default function Hero() {
       >
         <span className="text-gray-600 text-2xl">↓</span>
       </motion.div>
+
+      <HandCursor
+        handsRef={handsRef}
+        gestureRef={gestureRef}
+        active={handEnabled && inView}
+      />
+      <DrawingCanvas gestureRef={gestureRef} active={handEnabled && inView} />
+      <HandInfoToast active={handEnabled && inView} />
     </section>
   );
 }
