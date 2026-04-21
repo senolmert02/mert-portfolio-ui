@@ -112,7 +112,7 @@ export default function DrawingCanvas({ gestureRef, active }: Props) {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-[99]"
+      className="fixed inset-0 pointer-events-none z-[5]"
       aria-hidden
     />
   );

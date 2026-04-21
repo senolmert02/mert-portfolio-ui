@@ -69,14 +69,30 @@ export default function Hero() {
         }
         className="flex flex-col items-center relative z-10"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg text-gray-400 mb-4 tracking-widest uppercase"
-        >
-          {t.hero.greeting}
-        </motion.p>
+        {handEnabled ? (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-4"
+          >
+            <SandText
+              text={t.hero.greeting}
+              className="text-lg tracking-widest uppercase"
+              pointsRef={pointsRef}
+              active={handEnabled}
+            />
+          </motion.div>
+        ) : (
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg text-gray-400 mb-4 tracking-widest uppercase"
+          >
+            {t.hero.greeting}
+          </motion.p>
+        )}
         {handEnabled ? (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -86,9 +102,10 @@ export default function Hero() {
           >
             <SandText
               text="Şenol Mert Şar"
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold text-white"
               pointsRef={pointsRef}
               active={handEnabled}
+              gradient
             />
           </motion.div>
         ) : (
@@ -101,28 +118,61 @@ export default function Hero() {
             Şenol Mert Şar
           </motion.h1>
         )}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.8 }}
-          className="text-2xl text-gray-400 mb-8"
-        >
-          <TypeWriter text={t.hero.title} />
-        </motion.div>
+        {handEnabled ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+            className="mb-8"
+          >
+            <SandText
+              text={t.hero.title}
+              className="text-2xl"
+              pointsRef={pointsRef}
+              active={handEnabled}
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+            className="text-2xl text-gray-400 mb-8"
+          >
+            <TypeWriter text={t.hero.title} />
+          </motion.div>
+        )}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-8"
         />
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="max-w-lg text-center text-gray-500 mb-12 text-lg leading-relaxed"
-        >
-          {t.hero.description}
-        </motion.p>
+        {handEnabled ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mb-12"
+          >
+            <SandText
+              text={t.hero.description}
+              className="text-lg leading-relaxed text-center"
+              pointsRef={pointsRef}
+              active={handEnabled}
+              maxWidth={512}
+            />
+          </motion.div>
+        ) : (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="max-w-lg text-center text-gray-500 mb-12 text-lg leading-relaxed"
+          >
+            {t.hero.description}
+          </motion.p>
+        )}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,13 +183,31 @@ export default function Hero() {
             href="/projeler"
             className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition hover:scale-105"
           >
-            {t.hero.projects}
+            {handEnabled ? (
+              <SandText
+                text={t.hero.projects}
+                className="font-medium text-black"
+                pointsRef={pointsRef}
+                active={handEnabled}
+              />
+            ) : (
+              t.hero.projects
+            )}
           </Link>
           <a
             href="#iletisim"
             className="border border-gray-600 px-8 py-4 rounded-full font-medium hover:border-white transition hover:scale-105"
           >
-            {t.hero.contact}
+            {handEnabled ? (
+              <SandText
+                text={t.hero.contact}
+                className="font-medium text-white"
+                pointsRef={pointsRef}
+                active={handEnabled}
+              />
+            ) : (
+              t.hero.contact
+            )}
           </a>
         </motion.div>
       </motion.div>
@@ -153,12 +221,12 @@ export default function Hero() {
         <span className="text-gray-600 text-2xl">↓</span>
       </motion.div>
 
+      <DrawingCanvas gestureRef={gestureRef} active={handEnabled && inView} />
       <HandCursor
         handsRef={handsRef}
         gestureRef={gestureRef}
         active={handEnabled && inView}
       />
-      <DrawingCanvas gestureRef={gestureRef} active={handEnabled && inView} />
       <HandInfoToast active={handEnabled && inView} />
     </section>
   );
