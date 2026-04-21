@@ -37,9 +37,7 @@ export default function Hero() {
     return () => io.disconnect();
   }, []);
 
-  const { enabled: handEnabled, pointsRef, handsRef } = useHandTracker(
-    isDesktop && inView,
-  );
+  const { enabled: handEnabled, pointsRef, handsRef } = useHandTracker(inView);
 
   const onSwipeUp = useCallback(() => {
     window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
