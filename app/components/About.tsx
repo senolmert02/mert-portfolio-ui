@@ -3,6 +3,8 @@
 import ScrollReveal from "./ScrollReveal";
 import Counter from "./Counter";
 import { useLang } from "../lib/LanguageContext";
+import { totalProjectsCount } from "../lib/projects";
+import { skills } from "../lib/skills";
 
 export default function About() {
   const { t } = useLang();
@@ -20,8 +22,8 @@ export default function About() {
         </div>
       </ScrollReveal>
       <div className="flex gap-16 mt-16">
-        <Counter target={25} label={t.about.projects} />
-        <Counter target={6} label={t.about.technologies} />
+        <Counter target={totalProjectsCount} label={t.about.projects} />
+        <Counter target={skills.length} label={t.about.technologies} />
         <Counter target={1} label={t.about.experience} />
       </div>
     </section>

@@ -29,7 +29,7 @@ export default function Counter({ target, label }: { target: number; label: stri
         viewport={{ once: true }}
         className="text-5xl font-bold"
       >
-        {count}+
+        {count}
       </motion.p>
       <p className="text-gray-500 mt-2">{label}</p>
     </div>
