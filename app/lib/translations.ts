@@ -90,6 +90,11 @@ export const translations = {
       },
       viewCode: "Kodu Gör →",
     },
+    cv: {
+      back: "← Ana Sayfa",
+      title: "Özgeçmiş",
+      subtitle: "Güncel özgeçmişim.",
+    },
   },
   en: {
     hero: {
@@ -181,6 +186,11 @@ export const translations = {
         description: "Web app controlling a 3D solar system through webcam-based hand gestures. MediaPipe Hands tracks 21 joints while Three.js renders 8 planets with real orbital and mass data. Fully touchless interaction via open-palm, index, pinch and fist gestures — suited for museums, exhibitions, presentations and accessibility scenarios. Planet selection through 900 ms dwell with an info panel.",
       },
       viewCode: "View Code →",
+    },
+    cv: {
+      back: "← Home",
+      title: "Resume",
+      subtitle: "My current resume.",
     },
   },
 };

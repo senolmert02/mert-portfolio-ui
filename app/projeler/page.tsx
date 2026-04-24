@@ -6,6 +6,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import Footer from "../components/Footer";
 import MouseGlow from "../components/MouseGlow";
 import LangToggle from "../components/LangToggle";
+import CvButton from "../components/CvButton";
 import { useLang } from "../lib/LanguageContext";
 import { portalSubProjects } from "../lib/projects";
 
@@ -16,6 +17,7 @@ export default function ProjelerPage() {
     <div className="bg-black text-white min-h-screen">
       <MouseGlow />
       <LangToggle />
+      <CvButton />
       <div className="fixed top-0 w-full z-50 py-5">
         <div className="max-w-5xl mx-auto px-6">
           <Link href="/" className="text-gray-400 hover:text-white transition">

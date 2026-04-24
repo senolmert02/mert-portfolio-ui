@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import SocialBar from "./components/SocialBar";
 import MouseGlow from "./components/MouseGlow";
 import LangToggle from "./components/LangToggle";
+import CvButton from "./components/CvButton";
 import ParallaxSection from "./components/ParallaxSection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <MouseGlow />
       <SocialBar />
       <LangToggle />
+      <CvButton />
       <Hero />
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-transparent my-12 md:my-0" />
       <ParallaxSection>
